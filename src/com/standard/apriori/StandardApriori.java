@@ -55,7 +55,6 @@ public class StandardApriori {
 			// Read Column vice data (Column)
 			Map<String, List<String>> _Columnlist = FileReader.columnList;
 
-			long from = System.currentTimeMillis();
 			// Find 1st Candidate List
 			Map<String, Float> _cList = FirstCandidateList.generateFirstCandidateList(_Columnlist);
 			candidateList.put(k, _cList);
@@ -121,12 +120,9 @@ public class StandardApriori {
 					// Clear the List
 					GenerateRules.combination.clear();
 				}
-			}
-			long to = System.currentTimeMillis();
-			
+			}			
 			// Write Data to files
 			writeDataToFile();
-			System.out.println("Time taken: "+(to-from)+" Milliseconds");
 			
 
 		} catch (Exception e) {

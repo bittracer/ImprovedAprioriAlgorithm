@@ -53,8 +53,6 @@ public class ImprovedApriori {
 			// Read the file in appropriate format
 			FileReader.readFile(filename);
 
-			long from = System.currentTimeMillis();
-
 			// Read Column vice data (Column)
 			Map<String, List<String>> _Columnlist = FileReader.columnList;
 
@@ -157,11 +155,9 @@ public class ImprovedApriori {
 					GenerateRules.combination.clear();
 				}
 			}
-			long to = System.currentTimeMillis();
 
 			// Write Data to files
 			writeDataToFile();
-			System.out.println("Time taken: "+(to-from)+" Milliseconds");
 
 		} catch (Exception e) {
 			Logger.getGlobal().info(e.getMessage());
