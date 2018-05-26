@@ -49,16 +49,17 @@ public class Main {
 
 		try {
 
-			do {
-				version = in.nextInt();
-			} while (version < 1 || version > 2);
+			version = in.nextInt();
+
+			if(version < 1 || version > 2){
+				System.out.println("Invalid Input. Retry Again !");
+				System.exit(0);
+			}
 
 			in.nextLine();
 
-			do {
-				System.out.print("Please Enter the appropriate name of dataset:");
-				filename = in.nextLine();
-			} while (!filename.matches("^[A-Za-z0-9.]++$"));
+			System.out.print("Please Enter the appropriate name of dataset:");
+			filename = in.nextLine();
 
 			do {
 				System.out.print("Please Enter the Minimum Support Rate between 0 and 1:");

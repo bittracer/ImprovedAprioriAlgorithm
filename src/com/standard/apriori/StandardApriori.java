@@ -126,8 +126,11 @@ public class StandardApriori {
 			
 
 		} catch (Exception e) {
-			Logger.getGlobal().info(e.getMessage());
-			e.printStackTrace();
+			if(e.getMessage().contains("No such file")){
+				System.out.println("File not found. Retry Again !");
+			}else{
+				System.out.println("Invalid Error. Retry Again !");
+			}
 		}
 	}
 
@@ -162,7 +165,7 @@ public class StandardApriori {
 			writer.println("------>" + _model.getRhs());
 			writer.println("\n");
 		}
-		System.out.println("Data is generated in file named:Rules_For_" + filename.split("\\.")[0] + ".txt");
+		System.out.println("Rules are generated in file named:Rules_For_" + filename.split("\\.")[0] + ".txt");
 
 		writer.close();
 	}
